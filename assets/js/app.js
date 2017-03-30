@@ -30,17 +30,12 @@ $('#addTrainBtn').on("click", function(event){
 	console.log(trainData.firstTrain);
 	console.log(trainData.frequency);
 
-	/*Alert to let user know train was successfully added*/
-	//alert("Train was successfully added");
-
-	/*Clear out divs*/
+/*Clear out divs*/
 	trainName = $("#trainNameInput").val("");
 	destinationPoint = $("#destinationInput").val("");
 	firstTrainTime = $("#firstTrainInput").val("");
 	frequency = $("#frequencyInput").val("");
-
-	/*Prevents moving to new page*/
-	//return false;
+	
 /*Closes out addTrainBtn onclick function*/	
 }); 
 
