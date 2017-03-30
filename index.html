@@ -1,80 +1,91 @@
 <!DOCTYPE html>
-<html lang="eng=us">
 <html>
 <head>
-	<title>DC Train Scheduler App</title>
-	<meta charset="UTF=8">
-	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />	
-	<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<link rel="stylesheet" href="assets/css/style.css">
-	<link rel="stylesheet" href="assets/css/reset.css">
-	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
-	<!-- Add Jquery -->
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<!-- Add Firebase -->
-	<script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
-	<!-- Add Firebase Authentication UI -->
-	<script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
-	<!-- Add Bootstrap Jquery -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-		<!-- Add Moment -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+	<meta charset="UTF-8">
+	<title>Washington DC Train Schedule</title>
+		<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
+	<!--Bootstrap CSS link-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!--Main CSS stylesheet link-->
+		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/reset.css">
+	<!--Firebase link-->
+		<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 </head>
 <body>
 	<div class="container">
-		<div class="jumbotron">
-		  <h1 class="text-center">Washington DC Train  Schedule App </h1>
-		</div>
-	<div class="card">
-		<div class="card-header">Current Train Schedule</div>
-  	<div class="panel-body">
-       <table class="table">
-        <thead>
-         <tr>
-          <th class="col-xs-3">Train Name
-          </th>
-          <th class="col-xs-2">Destination
-          </th>
-          <th class="col-xs-2">Frequency (min)
-          </th>
-          <th class="col-xs-2">Next Arrival
-          </th>
-          <th class="col-xs-2">Minutes Away
-          </th>
-        </tr>
-        </thead>
-        <tbody id="train-table">     
-      </tbody>
-      </table>
-    </div>
-  	</div>
-  	<div class="card">
-		<div class="card-header">
-		    Add Train
-	  	</div>
-		<div class="panel-body">
-			<form id="add-train-form">
+		<!--Jumbotron with main titles-->
+			<div class="jumbotron">
+				<h2>Washington DC Train Schedule</h2>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+
+		<!--Train schedule-->
+		<div class="panel-panel-primary">
+			<div class="panel-heading" id="t1">
+				<h3 class="panel-title"><strong>Current Train Schedule</strong></h3>
+			</div>
+			<div class="panel-body">
+				<table class="table table-hover" id="trainTable">
+					<thead>
+						<tr>
+							<th>Train Name</th>
+							<th>Destination</th>
+							<th>Frequency(min)</th>
+							<th>Next Arrival</th>
+							<th>Minutes Away</th>
+						</tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+				</table>
+				<!--Closes div containing table-->
+			</div> 
+			<!--Closes panel primary div-->
+		</div> 
+
+		<!--Add train-->
+		<div class="panel panel-primary">
+			<div class="panel-heading" id="t2">
+				<h3 class="addTrainTitle"><strong>Add Train</strong></h3>
+			</div>
+			<div class="panel-body">
+
+			<!--Train entry form-->
+			<form id="main-form">
 				<div class="form-group">
-					<label for="train-name">Train Name</label>
-					<input type="text" class="form-control" id="train-name" type="text">
+					<label for="">Train Name</label>
+					<input type="text" class="form-control" id="trainNameInput">
 				</div>
+
 				<div class="form-group">
-					<label for="destination">Destination</label>
-					<input type="text" class="form-control" id="destination" type="number">
+					<label for="">Destination</label>
+					<input type="text" class="form-control" id="destinationInput">
 				</div>
+
 				<div class="form-group">
-					<label for="first-time">First Arrival Time</label>
-					<input type="text" class="form-control" id="first-train" type="number">
+					<label for="">First Train Time (HH:mm - military time)</label>
+					<input type="text" class="form-control" id="firstTrainInput">
 				</div>
+
 				<div class="form-group">
-					<label for="frequency">Frequency</label>
-					<input type="text" class="form-control" id="frequency" type="number">
+					<label for="">Frequency (min)</label>
+					<input type="text" class="form-control" id="frequencyInput">
 				</div>
-				<button class="btn btn-primary" id="submit-train" type="submit">Submit</button>
+					
+					<button type="submit" class="btn btn-primary" id="addTrainBtn">Submit</button>
 			</form>
+									<!--Closes panel-body div-->
+								</div>
+							<!--Closes panel-primary div-->
+						</div>
+					<!--Closes col-lg-12 div -->
+				</div>
+			<!--Closes div.row -->
 		</div>
-	</div>
+	<!--Closes div.container-->
 </div>
  <!-- /*  footer-*/ -->
     <footer class="footer-distributed">
@@ -100,10 +111,11 @@
       </form>
     </div>
   </footer>
- <!--Jquery link-->
+	<!--Jquery link-->
 		<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
 	<!--Moment.js link-->
 		<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-		<script src="js/app.js"></script>
+	<!--Javascript file link-->
+		<script type="text/javascript" src="assets/js/app.js"></script>
 </body>
 </html>
