@@ -1,7 +1,7 @@
 # DCTrainSchedulerApp ++==>> watch live here ==> https://mrkem598.github.io/DCTrainSchedulerApp/
 DC train scheduler app is fantastic app with the user to add the upcoming train schedule. This is real time data update app with firebase database. 
-<img width="862" alt="1capture" src="https://cloud.githubusercontent.com/assets/23619819/24476586/dbb4cd6c-14a1-11e7-8ffb-12d8acb29f34.PNG">
-<img width="862" alt="4capture" src="https://cloud.githubusercontent.com/assets/23619819/24476587/dbb503ae-14a1-11e7-907b-2c295a0dae23.PNG">
-<img width="864" alt="2capture" src="https://cloud.githubusercontent.com/assets/23619819/24476585/dbb246be-14a1-11e7-812f-f652a6205d80.PNG">
-<img width="862" alt="3capture" src="https://cloud.githubusercontent.com/assets/23619819/24476584/dbb0f73c-14a1-11e7-811b-dfb865ddfbac.PNG">
+<img width="500" alt="1capture" src="https://cloud.githubusercontent.com/assets/23619819/24508224/cc1d0f38-1530-11e7-9059-16da5b8c926b.PNG">
+
+<img width="500" alt="2capture" src="https://cloud.githubusercontent.com/assets/23619819/24508229/cf8e3214-1530-11e7-8b32-e653a218a7c5.PNG">
+<img width="500" alt="3capture" src="https://cloud.githubusercontent.com/assets/23619819/24508242/d4f8fc2a-1530-11e7-8c9c-645fb6c39cd2.PNG">
 
